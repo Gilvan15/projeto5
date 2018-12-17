@@ -1,9 +1,13 @@
 package com.projeto.principal.entity;
 
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
+
 
 @Entity
 public class User {
@@ -14,6 +18,9 @@ public class User {
 	private String nome;
 	private String email;
 	
+	@ManyToMany
+	private Set<Role> roles;
+		
 	public Long getId() {
 		return id;
 	}
